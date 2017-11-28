@@ -45,16 +45,16 @@ const toastPosition = pos => {
         top: "1em",
         left: "50%",
         marginLeft: marginLeft
-      }; 
+      };
       break;
     case POSITION.TOP_RIGHT:
     default:
       rule = {
         top: "1em",
         right: "1em"
-      };  
+      };
       break;
-    case POSITION.BOTTOM_LEFT: 
+    case POSITION.BOTTOM_LEFT:
       rule = {
         bottom: "1em",
         left: "1em"
@@ -71,7 +71,7 @@ const toastPosition = pos => {
       rule = {
         bottom: "1em",
         right: "1em"
-      }; 
+      };
   }
   return css(rule, css({
     [`@media ${style.mobile}`]: {
@@ -334,7 +334,7 @@ class ToastContainer extends Component {
         delete this.collection[toastId]
       }
     });
- 
+
     return Object.keys(toastToRender).map(position => {
       const disablePointer =
         toastToRender[position].length === 1 &&
@@ -355,9 +355,7 @@ class ToastContainer extends Component {
 
   render() {
     return (
-      <div>
-        {this.renderToast()}
-      </div>
+      this.renderToast()
     );
   }
 }
